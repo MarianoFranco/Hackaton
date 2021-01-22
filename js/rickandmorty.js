@@ -744,22 +744,20 @@ var characterList =[
 ];
 var status = document.querySelector(".card__status");
 
-for (var i=0; i <characterList.length; i++){
-	if (characterList[i].status=== 'Alive'){
-		document.querySelector(".characters").innerHTML += '<div class="card"><div class="container"><img  class="card__status" src="'+ characterList[i].image+'" alt="Profile photo"></div><div class="container2"><h2 class="container2__h2">'+ characterList[i].name +'</h2><p class="container2__specie">'+ characterList[i].species +'</p><p class="container2__gender">'+ characterList[i].gender +'</p><p class="card__status">'+ characterList[i].status +'</p></div>';
+
+
+function createCard(){
+	for (var i=0; i <characterList.length; i++){
+		if (characterList[i].status=== 'Alive'){
+			document.querySelector(".characters").innerHTML += '<div class="card"><div class="container"><img  class="card__status" src="'+ characterList[i].image+'" alt="Profile photo"></div><div class="container2"><h2 class="container2__h2">'+ characterList[i].name +'</h2><p class="container2__specie">'+ characterList[i].species +'</p><p class="container2__gender">'+ characterList[i].gender +'</p><p class="card__status">'+ characterList[i].status +'</p></div>';
+		}
+		else if (characterList[i].status === 'unknown'){
+			document.querySelector(".characters").innerHTML += '<div class="card"><div class="container"><img  class="card__status2" src="'+ characterList[i].image+'" alt="Profile photo"></div><div class="container2"><h2 class="container2__h2">'+ characterList[i].name +'</h2><p class="container2__specie">'+ characterList[i].species +'</p><p class="container2__gender">'+ characterList[i].gender +'</p><p class="card__status2">'+ characterList[i].status +'</p></div>';
+		}
+		else {
+			document.querySelector(".characters").innerHTML += '<div class="card"><div class="container"><img  class="card__status3" src="'+ characterList[i].image+'" alt="Profile photo"></div><div class="container2"><h2 class="container2__h2">'+ characterList[i].name +'</h2><p class="container2__specie">'+ characterList[i].species +'</p><p class="container2__gender">'+ characterList[i].gender +'</p><p class="card__status3">'+ characterList[i].status +'</p></div>';
+		}	
 	}
-	else if (characterList[i].status === 'unknown'){
-		document.querySelector(".characters").innerHTML += '<div class="card"><div class="container"><img  class="card__status2" src="'+ characterList[i].image+'" alt="Profile photo"></div><div class="container2"><h2 class="container2__h2">'+ characterList[i].name +'</h2><p class="container2__specie">'+ characterList[i].species +'</p><p class="container2__gender">'+ characterList[i].gender +'</p><p class="card__status2">'+ characterList[i].status +'</p></div>';
-	}
-	else {
-		document.querySelector(".characters").innerHTML += '<div class="card"><div class="container"><img  class="card__status3" src="'+ characterList[i].image+'" alt="Profile photo"></div><div class="container2"><h2 class="container2__h2">'+ characterList[i].name +'</h2><p class="container2__specie">'+ characterList[i].species +'</p><p class="container2__gender">'+ characterList[i].gender +'</p><p class="card__status3">'+ characterList[i].status +'</p></div>';
-	}	
 }
 
-
-
-
-function draw(){
-	rect(300, 180,100,100);
-}
-
+createCard();
