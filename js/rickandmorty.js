@@ -759,3 +759,7 @@ for (var i=0; i <characterList.length; i++){
 
 
 
+function draw(){
+	rect(300, 180,100,100);
+}
+
